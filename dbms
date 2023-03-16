@@ -1,0 +1,30 @@
+mysql> CREATE DATABASE IDENTITY;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE IDENTITY;
+Database changed
+CREATE TABLE PERSON(person_id int NOT NULL PRIMARY KEY,
+    -> Name varchar(100) NOT NULL,
+    -> Aadhar_no int NOT NULL UNIQUE,
+    -> Age int NOT NULL CHECK (Age>0));
+Query OK, 0 rows affected (0.41 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_IDENTITY |
++--------------------+
+| PERSON             |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> DESC PERSON;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| person_id | int(11)      | NO   | PRI | NULL    |       |
+| Name      | varchar(100) | NO   |     | NULL    |       |
+| Aadhar_no | int(11)      | NO   | UNI | NULL    |       |
+| Age       | int(11)      | NO   |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
